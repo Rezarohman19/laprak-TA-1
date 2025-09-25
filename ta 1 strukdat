@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+const int ruangan = 2;
+const int jenisBuku = 4;
+int buku [ruangan][jenisBuku];
+int totalBuku [jenisBuku] = {0};
+
+// Memasukkan data jumlah buku per jenis di tiap ruangan
+for (int i = 0; i < ruangan; i++) {
+cout << "Masukkan jumlah buku untuk Ruangan " << i + 1 << ":\n";
+for (int j=0; j < jenisBuku; j++) {
+cout << "Jenis Buku " << j + 1 << ": ";
+cin >> buku[i][j];
+}
+}
+
+// Menghitung total buku dari kedua ruangan untuk setiap jenis buku
+for (int j = 0; j < jenisBuku; j++) { 
+for (int i=0; i < ruangan; i++) {
+totalBuku[j] += buku[i][j];
+}
+}
+
+// Menampilkan hasil total buku untuk setiap jenis buku
+cout << "\nTotal buku untuk setiap jenis buku dalam perpustakaan: \n"; 
+for (int j = 0; j < jenisBuku; j++ ) { 
+    cout << "jenis Buku" << j + 1 << " : " << totalBuku[j] << " buku \n";
+}
+
+return 0;
+}
